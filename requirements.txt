@@ -1,0 +1,22 @@
+# ECEN 758 Project - Requirements File
+# Amazon Reviews Multi-class Sentiment Classification
+
+# Core Deep Learning Framework
+tensorflow>=2.13.0        # TensorFlow with GPU support (includes Keras)
+
+# Data Processing and Analysis
+pandas>=2.0.0             # Data manipulation and CSV handling
+numpy>=1.24.0             # Numerical computing
+
+# Machine Learning Tools
+scikit-learn>=1.3.0       # Machine learning algorithms and utilities
+
+# Data Visualization
+matplotlib>=3.7.0         # Plotting and visualization
+seaborn>=0.12.0           # Statistical data visualization
+
+# File Download and Management
+gdown>=4.7.0              # Google Drive file downloader
+
+# Installation command:
+# pip install -r requirements.txt
