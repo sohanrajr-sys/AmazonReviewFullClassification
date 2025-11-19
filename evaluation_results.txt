@@ -1,0 +1,80 @@
+
+======================================================================
+DEBERTA MODEL EVALUATION - TEST DATASET RESULTS
+======================================================================
+
+Test Dataset Size: 1250
+Number of Classes: 5
+Device: cpu
+
+======================================================================
+OVERALL METRICS
+======================================================================
+
+Accuracy: 0.6064
+
+Macro Averages:
+  Precision: 0.6020
+  Recall: 0.6064
+  F1 Score: 0.6017
+
+Weighted Averages:
+  Precision: 0.6020
+  Recall: 0.6064
+  F1 Score: 0.6017
+
+======================================================================
+PER-CLASS METRICS
+======================================================================
+
+Class 0:
+  Precision: 0.6643
+  Recall: 0.7600
+  F1 Score: 0.7090
+Class 1:
+  Precision: 0.5202
+  Recall: 0.5160
+  F1 Score: 0.5181
+Class 2:
+  Precision: 0.5930
+  Recall: 0.4720
+  F1 Score: 0.5256
+Class 3:
+  Precision: 0.5588
+  Recall: 0.5320
+  F1 Score: 0.5451
+Class 4:
+  Precision: 0.6738
+  Recall: 0.7520
+  F1 Score: 0.7108
+
+======================================================================
+CONFUSION MATRIX
+======================================================================
+[[190  46   6   1   7]
+ [ 80 129  31   7   3]
+ [ 13  66 118  43  10]
+ [  2   6  38 133  71]
+ [  1   1   6  54 188]]
+
+======================================================================
+PREDICTION CONFIDENCE ANALYSIS
+======================================================================
+Mean Confidence: 0.6972
+Std Confidence: 0.1462
+Min Confidence: 0.2410
+Max Confidence: 0.9625
+
+Correct predictions with high confidence (>0.9): 110
+Incorrect predictions with high confidence (>0.9): 14
+Correct predictions with low confidence (<=0.5): 33
+Incorrect predictions with low confidence (<=0.5): 62
+
+======================================================================
+VISUALIZATIONS GENERATED
+======================================================================
+✓ confusion_matrix.png
+✓ f1_scores.png
+✓ confidence_distribution.png
+✓ correct_incorrect_by_confidence.png
+✓ metrics_comparison.png
