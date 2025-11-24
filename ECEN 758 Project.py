@@ -165,7 +165,7 @@ print("Label ranges -> train:", label_train.min(), "-", label_train.max(), "| va
 
 
 #***************************************Exploratory Data Analysis***************************
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS
 import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import Counter
@@ -237,10 +237,14 @@ print(f"\nTokenized Sequence Length (after padding/truncating): {maxlen} words")
 #***************************************Most Common Words Analysis***************************
 print("\n3. MOST COMMON WORDS ANALYSIS")
 print("-"*80)
+stop_words= ENGLISH_STOP_WORDS
+
 # Get word frequency from training text
 all_train_words = []
 for text in data_train_text:
-    all_train_words.extend(text.split())
+    words = text.split()
+    filtered_words = [word for word in words if word not in stop_words and len(word) > 2]
+    all_train_words.extend(filtered_words)
 
 word_freq = Counter(all_train_words)
 most_common_words = word_freq.most_common(20)
@@ -259,6 +263,7 @@ try:
     vectorizer_bigram = CountVectorizer(
         ngram_range=(2, 2),
         max_features=15,
+        stop_words='english'
         token_pattern=r'\b\w+\b'
     )
     bigram_matrix = vectorizer_bigram.fit_transform(data_train_text)
@@ -280,6 +285,7 @@ try:
     vectorizer_trigram = CountVectorizer(
         ngram_range=(3, 3),
         max_features=15,
+        stop_words='english'
         token_pattern=r'\b\w+\b'
     )
     trigram_matrix = vectorizer_trigram.fit_transform(data_train_text)
