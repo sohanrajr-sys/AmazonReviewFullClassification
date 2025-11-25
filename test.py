@@ -37,11 +37,37 @@ test['long_text'] = test['long_text'].astype(str).apply(clean_text)
 test['short_text'] = test['short_text'].astype(str).apply(clean_text)
 test['rating']=test['rating'].astype(int)-1
 
-#code to get 100000 samples from test with equal no. of classes
+# Ask user how many samples per class they'd like to test with (default 250)
+default_per_class = 250
+try:
+    user_input = input(f"Enter number of samples per class to test (default {default_per_class}): ").strip()
+    if user_input == "":
+        n_per_class = default_per_class
+    else:
+        n_per_class = int(user_input)
+        if n_per_class <= 0:
+            print(f"Provided number <= 0; using default {default_per_class} instead.")
+            n_per_class = default_per_class
+except Exception as e:
+    print(f"Invalid input ({e}); using default {default_per_class}.")
+    n_per_class = default_per_class
+
 df_list = []
 for i in range(5):
-    df_class = test[test['rating'] == i].sample(n=250, random_state=42)
+    class_df = test[test['rating'] == i]
+    available = len(class_df)
+    if available == 0:
+        print(f"Warning: no samples found for class {i}.")
+        continue
+    take_n = min(n_per_class, available)
+    if take_n < n_per_class:
+        print(f"Warning: requested {n_per_class} samples for class {i}, but only {available} available. Using {take_n}.")
+    df_class = class_df.sample(n=take_n, random_state=42)
     df_list.append(df_class)
+
+if len(df_list) == 0:
+    raise RuntimeError("No test samples available after sampling. Check your `test.csv` and labels.")
+
 balanced_test = pd.concat(df_list).reset_index(drop=True)
 
 # ============================================================================

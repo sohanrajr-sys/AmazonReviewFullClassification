@@ -3,7 +3,7 @@
 DEBERTA MODEL EVALUATION - TEST DATASET RESULTS
 ======================================================================
 
-Test Dataset Size: 1250
+Test Dataset Size: 500
 Number of Classes: 5
 Device: cpu
 
@@ -11,64 +11,64 @@ Device: cpu
 OVERALL METRICS
 ======================================================================
 
-Accuracy: 0.6064
+Accuracy: 0.6020
 
 Macro Averages:
-  Precision: 0.6020
-  Recall: 0.6064
-  F1 Score: 0.6017
+  Precision: 0.5998
+  Recall: 0.6020
+  F1 Score: 0.5982
 
 Weighted Averages:
-  Precision: 0.6020
-  Recall: 0.6064
-  F1 Score: 0.6017
+  Precision: 0.5998
+  Recall: 0.6020
+  F1 Score: 0.5982
 
 ======================================================================
 PER-CLASS METRICS
 ======================================================================
 
 Class 0:
-  Precision: 0.6643
+  Precision: 0.6847
   Recall: 0.7600
-  F1 Score: 0.7090
+  F1 Score: 0.7204
 Class 1:
-  Precision: 0.5202
-  Recall: 0.5160
-  F1 Score: 0.5181
+  Precision: 0.5326
+  Recall: 0.4900
+  F1 Score: 0.5104
 Class 2:
-  Precision: 0.5930
-  Recall: 0.4720
-  F1 Score: 0.5256
+  Precision: 0.6203
+  Recall: 0.4900
+  F1 Score: 0.5475
 Class 3:
-  Precision: 0.5588
-  Recall: 0.5320
-  F1 Score: 0.5451
+  Precision: 0.5094
+  Recall: 0.5400
+  F1 Score: 0.5243
 Class 4:
-  Precision: 0.6738
-  Recall: 0.7520
-  F1 Score: 0.7108
+  Precision: 0.6518
+  Recall: 0.7300
+  F1 Score: 0.6887
 
 ======================================================================
 CONFUSION MATRIX
 ======================================================================
-[[190  46   6   1   7]
- [ 80 129  31   7   3]
- [ 13  66 118  43  10]
- [  2   6  38 133  71]
- [  1   1   6  54 188]]
+[[76 17  1  1  5]
+ [33 49 11  5  2]
+ [ 2 25 49 21  3]
+ [ 0  1 16 54 29]
+ [ 0  0  2 25 73]]
 
 ======================================================================
 PREDICTION CONFIDENCE ANALYSIS
 ======================================================================
-Mean Confidence: 0.6972
-Std Confidence: 0.1462
-Min Confidence: 0.2410
-Max Confidence: 0.9625
+Mean Confidence: 0.7013
+Std Confidence: 0.1467
+Min Confidence: 0.2735
+Max Confidence: 0.9622
 
-Correct predictions with high confidence (>0.9): 110
-Incorrect predictions with high confidence (>0.9): 14
-Correct predictions with low confidence (<=0.5): 33
-Incorrect predictions with low confidence (<=0.5): 62
+Correct predictions with high confidence (>0.9): 46
+Incorrect predictions with high confidence (>0.9): 5
+Correct predictions with low confidence (<=0.5): 15
+Incorrect predictions with low confidence (<=0.5): 21
 
 ======================================================================
 VISUALIZATIONS GENERATED
